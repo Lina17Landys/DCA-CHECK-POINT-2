@@ -1,5 +1,5 @@
 import "./components/export"
-
+import { getCatFact, getCat } from "./types/fetch";
 class AppContainer extends HTMLElement {
     constructor(){
         super();
@@ -13,6 +13,15 @@ class AppContainer extends HTMLElement {
     render() {
         const something = this.ownerDocument.createElement('div');
         this.shadowRoot?.appendChild(something);
+
+        this.shadowRoot!.innerHTML = `
+
+        <link rel="stylesheet" href="./styles.css">
+      <center>  <h1>Cat Facts</h1>
+        <button-container></button-container>
+        <cat-fact></cat-fact>
+        </center>
+        `
     }
 }
 
